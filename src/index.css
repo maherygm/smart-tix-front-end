@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: "Nunito", system-ui, sans-serif;
+    scroll-behavior: smooth;
+  }
+  h1,
+  h2,
+  h3 {
+    font-family: "SuperTitle";
+  }
+  @font-face {
+    font-family: "Nunito";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(/src/assets/fonts/nunito/NunitoSans_7pt-Regular.ttf)
+      format("truetype");
+  }
+  @font-face {
+    font-family: "SuperTitle";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(/src/assets/fonts/abeezee/ABeeZee-Regular.ttf) format("truetype");
+  }
+  *::-webkit-scrollbar-thumb {
+    background-color: rgb(124, 123, 123);
+    border-radius: 4px;
+    opacity: 0.1;
+  }
+  *::-webkit-scrollbar-corner {
+    border-radius: 20px;
+  }
+  *::-webkit-scrollbar {
+    padding: 20px 0px;
+    background: rgb(34, 34, 34);
+    width: 6px;
+  }
+  *::-webkit-scrollbar:hover {
+    background-color: rgb(169, 172, 175);
+  }
+}
