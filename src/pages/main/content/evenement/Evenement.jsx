@@ -1,7 +1,11 @@
-import React from "react";
-
+import Slide from "../../../../components/ui/slider/Slide";
+import { image } from "../../../../utils/imageImport/ImageImport";
 const Evenement = () => {
-  return <div className="h-[80vh] bg-white">Evenement</div>;
+  return (
+    <div className=" overflow-hidden bg-white pb-11  pt-2">
+      <Slide data={image} />
+    </div>
+  );
 };
 
 export default Evenement;

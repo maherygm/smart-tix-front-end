@@ -1,7 +1,8 @@
 import React from "react";
+import { Outlet } from "react-router-dom";
 
 const Redirect = () => {
-  return <div>Redirect</div>;
+  return <Outlet />;
 };
 
 export default Redirect;

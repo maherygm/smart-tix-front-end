@@ -1,8 +1,8 @@
 import { Button, TextField } from "@mui/material";
 import React from "react";
 import { NavLink } from "react-router-dom";
-import img from "../../../assets/images/400x500/img14.jpg";
-import img2 from "../../../assets/images/400x500/img15.jpg";
+import img from "../../../../assets/images/400x500/img14.jpg";
+import img2 from "../../../../assets/images/400x500/img15.jpg";
 
 const Login = () => {
   return (

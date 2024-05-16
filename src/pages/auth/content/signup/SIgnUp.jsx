@@ -1,8 +1,8 @@
 import { Button, TextField } from "@mui/material";
 
 import { NavLink } from "react-router-dom";
-import img from "../../../assets/images/400x500/img16.jpg";
-import img2 from "../../../assets/images/400x500/img17.jpg";
+import img from "../../../../assets/images/400x500/img16.jpg";
+import img2 from "../../../../assets/images/400x500/img17.jpg";
 
 const SIgnUp = () => {
   return (

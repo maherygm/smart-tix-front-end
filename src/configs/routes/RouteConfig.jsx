@@ -1,9 +1,14 @@
 import { Suspense, lazy } from "react";
 import { Route, Routes } from "react-router-dom";
+import Loader from "../../components/ui/loader/Loader";
 
 const __AUTH__ = lazy(() => import("../../pages/auth/Auth"));
-const __AUTH__LOGIN__ = lazy(() => import("../../pages/auth/login/Login"));
-const __AUTH__SIGNUP__ = lazy(() => import("../../pages/auth/signup/SIgnUp"));
+const __AUTH__LOGIN__ = lazy(
+  () => import("../../pages/auth/content/login/Login")
+);
+const __AUTH__SIGNUP__ = lazy(
+  () => import("../../pages/auth/content/signup/SIgnUp")
+);
 
 const __MAIN__ = lazy(() => import("../../pages/main/Main"));
 
@@ -16,9 +21,12 @@ const __REDIRECT__NOTFOUND__ = lazy(
 const __REDIRECT__UNAUTHORIZED__ = lazy(
   () => import("../../pages/redirect/unhautorized/Unhautorized")
 );
+const __REDIRECT__SUCCESS__ = lazy(
+  () => import("../../pages/redirect/success/Success")
+);
 const RouteConfig = () => {
   return (
-    <Suspense fallback={null}>
+    <Suspense fallback={<Loader />}>
       <Routes>
         {/* authentification Route  */}
         <Route path="/auth" element={<__AUTH__ />}>
@@ -37,6 +45,7 @@ const RouteConfig = () => {
         <Route path="/redirect" element={<__REDIRECT__ />}>
           <Route path="notfound" element={<__REDIRECT__NOTFOUND__ />} />
           <Route path="unauthorized" element={<__REDIRECT__UNAUTHORIZED__ />} />
+          <Route path="success" element={<__REDIRECT__SUCCESS__ />} />
         </Route>
       </Routes>
     </Suspense>
