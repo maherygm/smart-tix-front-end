@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Salle des Fêtes Fianarantsoa",
+    "latitude": -21.4525,
+    "longitude": 47.085,
+    "address": "Rue de l'Indépendance, Centre Ville, Fianarantsoa"
+  },
+  {
+    "name": "Palais des Sports",
+    "latitude": -21.454,
+    "longitude": 47.0875,
+    "address": "Avenue de la Liberté, Centre Ville, Fianarantsoa"
+  },
+  {
+    "name": "Centre Culturel Albert Camus",
+    "latitude": -21.45,
+    "longitude": 47.0825,
+    "address": "Boulevard de l'Université, Centre Ville, Fianarantsoa"
+  },
+  {
+    "name": "Hôtel Restaurant La Rizière",
+    "latitude": -21.4535,
+    "longitude": 47.0845,
+    "address": "Route de la Colline, Centre Ville, Fianarantsoa"
+  },
+  {
+    "name": "Parc de la Ville",
+    "latitude": -21.4555,
+    "longitude": 47.089,
+    "address": "Place de l'Harmonie, Centre Ville, Fianarantsoa"
+  },
+  {
+    "name": "Théâtre de Verdure",
+    "latitude": -21.4515,
+    "longitude": 47.081,
+    "address": "Allée des Artistes, Centre Ville, Fianarantsoa"
+  },
+  {
+    "name": "Stade ampasambazaha",
+    "latitude": -21.44902,
+    "longitude": 47.08804,
+    "address": "Place de Ampasambazaha, Centre Ville, Fianarantsoa"
+  },
+  {
+    "name": "Hotel Pietra",
+    "latitude": -21.4403821,
+    "longitude": 47.0977219,
+    "address": "Place de Ambalakosoa, Centre Ville, Fianarantsoa"
+  },
+  {
+    "name": "KMM Talatamaty",
+    "latitude": -21.43691,
+    "longitude": 47.10459,
+    "address": "Place de talatamaty, Centre Ville, Fianarantsoa"
+  },
+  {
+    "name": "ROYAL ESPACE",
+    "latitude": -21.43772,
+    "longitude": 47.09989,
+    "address": "Place de Bateravola, Centre Ville, Fianarantsoa"
+  }
+]

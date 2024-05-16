@@ -42,7 +42,7 @@ const Header = () => {
                 <a href="#contact">Contact</a>
               </li>
               <li className="cursor-pointer transition-colors duration-200 hover:text-blue-300">
-                Explorer
+                <NavLink to={"/explore"}>Explorer</NavLink>
               </li>
               <li className="cursor-pointer transition-colors duration-200 hover:text-blue-300">
                 Organiser

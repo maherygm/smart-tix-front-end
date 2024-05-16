@@ -24,6 +24,8 @@ const __REDIRECT__UNAUTHORIZED__ = lazy(
 const __REDIRECT__SUCCESS__ = lazy(
   () => import("../../pages/redirect/success/Success")
 );
+
+const __EXPLORE__ = lazy(() => import("../../pages/explore/Explore.jsx"));
 const RouteConfig = () => {
   return (
     <Suspense fallback={<Loader />}>
@@ -40,6 +42,9 @@ const RouteConfig = () => {
 
         {/* dashboard Route  */}
         <Route path="/dashboard" element={<__DASHBOARD__ />} />
+
+        {/* explore */}
+        <Route path="/explore" element={<__EXPLORE__ />} />
 
         {/* redirect route */}
         <Route path="/redirect" element={<__REDIRECT__ />}>
