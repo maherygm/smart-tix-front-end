@@ -26,6 +26,12 @@ const __REDIRECT__SUCCESS__ = lazy(
 );
 
 const __EXPLORE__ = lazy(() => import("../../pages/explore/Explore.jsx"));
+
+const __PANORAMA__ = lazy(
+  () => import("../../pages/explore/content/vrlocation/vrlocation.jsx")
+);
+
+const __DETAILS__ = lazy(() => import("../../pages/details/Details.jsx"));
 const RouteConfig = () => {
   return (
     <Suspense fallback={<Loader />}>
@@ -45,6 +51,12 @@ const RouteConfig = () => {
 
         {/* explore */}
         <Route path="/explore" element={<__EXPLORE__ />} />
+
+        {/* pannorama */}
+        <Route path="/panorama" element={<__PANORAMA__ />} />
+
+        {/* details */}
+        <Route path="/details" element={<__DETAILS__ />} />
 
         {/* redirect route */}
         <Route path="/redirect" element={<__REDIRECT__ />}>

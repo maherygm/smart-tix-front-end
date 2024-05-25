@@ -1,16 +1,14 @@
-import React from "react";
-import QrReadDialog from "./component/QrReadDialog";
+import Header from "./content/header/Header";
+import Incoming from "./content/incomming/Incoming";
+import Last from "./content/last/Last";
 
 const Dashboard = () => {
   return (
-    <>
-      <div>Dashboard</div>
-      <div className="flex items-center justify-center">
-        <div className="size-96">
-          <QrReadDialog />
-        </div>
-      </div>
-    </>
+    <div className="px-20">
+      <Header />
+      <Incoming />
+      <Last />
+    </div>
   );
 };
 

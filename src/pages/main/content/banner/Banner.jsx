@@ -1,12 +1,12 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import  { useRef } from "react";
+import { useRef } from "react";
 import { BsArrowRight } from "react-icons/bs";
 import { FaFacebook, FaTwitter, FaYoutube } from "react-icons/fa";
-import img1 from "../../../../assets/images/480x320/img10.jpg";
-import img2 from "../../../../assets/images/480x320/img9.jpg";
+import img1 from "../../../../assets/images/imageBanner/img-1.jpg";
+import img2 from "../../../../assets/images/imageBanner/img-3.jpg";
+import img4 from "../../../../assets/images/imageBanner/img-5.jpg";
 
-import BackgroundCard_black from "../../../../assets/images/background/BackgroundCard_white.png";
 const Banner = () => {
   const scopeRef = useRef(null);
   useGSAP(
@@ -25,7 +25,7 @@ const Banner = () => {
     <div
       className=""
       style={{
-        background: `url(${BackgroundCard_black})`,
+        background: `url(${img4})`,
       }}
       ref={scopeRef}
       id="banner"

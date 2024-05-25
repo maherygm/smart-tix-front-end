@@ -1,11 +1,11 @@
-import img21 from "../../assets/images/400x500/img21.jpg";
-import img22 from "../../assets/images/400x500/img22.jpg";
-import img24 from "../../assets/images/400x500/img24.jpg";
-import img26 from "../../assets/images/400x500/img26.jpg";
-import img28 from "../../assets/images/400x500/img28.jpg";
-import img29 from "../../assets/images/400x500/img29.jpg";
-import img30 from "../../assets/images/400x500/img30.jpg";
-import img31 from "../../assets/images/400x500/img31.jpg";
+import img21 from "../../assets/images/op/img_1.jpg";
+import img31 from "../../assets/images/op/img_2.jpg";
+import img30 from "../../assets/images/op/img_3.jpeg";
+import img29 from "../../assets/images/op/img_4.jpg";
+import img28 from "../../assets/images/op/img_5.jpg";
+import img26 from "../../assets/images/op/img_6.jpg";
+import img24 from "../../assets/images/op/img_7.jpg";
+import img22 from "../../assets/images/op/img_8.jpg";
 
 export const image = [
   {
@@ -13,7 +13,7 @@ export const image = [
     title: "Ambondrona cabaret",
     date: new Date(),
     prix: 5000,
-    locate: "Royal Espace BAteravola",
+    locate: "La CHAUD'HUIER",
     latitude: "1000000000",
     logitude: "2000000000",
     heure: "15h",
@@ -26,11 +26,11 @@ export const image = [
     latitude: "1000000000",
     logitude: "2000000000",
     heure: "15h",
-    locate: "Royal Espace BAteravola",
+    locate: "Zomatel Hotel",
   },
   {
     img: img24,
-    title: "COncert Kiaka",
+    title: "Concert Kiaka",
     date: new Date(),
     prix: 5000,
     latitude: "1000000000",
@@ -56,7 +56,7 @@ export const image = [
     latitude: "1000000000",
     logitude: "2000000000",
     heure: "15h",
-    locate: "Royal Espace Bateravola",
+    locate: "Pietra Hotel",
   },
   {
     img: img29,
@@ -66,7 +66,7 @@ export const image = [
     latitude: "1000000000",
     logitude: "2000000000",
     heure: "15h",
-    locate: "Royal Espace Bateravola",
+    locate: "Zig zag",
   },
   {
     img: img30,
@@ -76,7 +76,7 @@ export const image = [
     latitude: "1000000000",
     logitude: "2000000000",
     heure: "15h",
-    locate: "Royal Espace Bateravola",
+    locate: "Gymnase Ambatomena",
   },
   {
     img: img31,

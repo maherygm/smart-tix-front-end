@@ -17,7 +17,10 @@ const Slide = ({ data }) => {
     <div className="slider-container">
       <Slider {...settings}>
         {data.map((val, index) => (
-          <div className="mx-4 overflow-hidden  p-2" key={index}>
+          <div
+            className="mx-4 max-h-[90vh] overflow-hidden rounded-lg p-2  outline-none"
+            key={index}
+          >
             <img className="w-full cursor-pointer rounded-lg" src={val.img} />
           </div>
         ))}

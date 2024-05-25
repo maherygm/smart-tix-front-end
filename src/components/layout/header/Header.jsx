@@ -30,7 +30,8 @@ const Header = () => {
         className={`fixed top-11 mx-auto my-0  h-auto w-4/5  py-7 transition-transform ${active ? " -translate-y-6  rounded-3xl bg-zinc-950/70 p-5  backdrop-blur-sm" : ""}`}
       >
         <div className="flex items-center justify-between text-white">
-          <h1 className="cursor-pointer bg-gradient-to-r from-sky-500 to-indigo-500 bg-clip-text text-4xl text-transparent">
+          <h1 className="flex cursor-pointer gap-2 bg-gradient-to-r from-sky-500 to-indigo-500 bg-clip-text text-4xl text-transparent">
+            <img className="w-10 rounded-full " src="smart.jpg" />
             <a href="#banner">SMART_TIX</a>
           </h1>
           <div>

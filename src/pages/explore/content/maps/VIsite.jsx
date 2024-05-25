@@ -10,25 +10,15 @@ import {
 } from "react-leaflet";
 // import LeafletRoutingMachine from "./LeafletRoutingMachine";
 
-import markers from "../../../../assets/images/icons/png/marker-icon.png";
-
 import { useState } from "react";
 
+import { NavLink } from "react-router-dom";
 import img from "../../../../assets/images/480x320/img30.jpg";
 import MyAllData from "../../../../utils/hotelsPosition.json";
 
 const VIsite = () => {
   // //royal espace
   const position = [-21.43772, 47.09989];
-
-  // //kmm talatamaty
-  // const position2 = [-21.43691, 47.10459];
-
-  // //stade apasambazaha
-  // const pos = [-21.44902, 47.08804];
-
-  // //
-  // const hotelPietre = [-21.4403821, 47.0977219];
 
   const [clickedPosition, setClickedPosition] = useState(null);
 
@@ -37,7 +27,7 @@ const VIsite = () => {
     <div className="z-0 h-screen w-full overflow-hidden pt-36">
       <MapContainer
         center={position}
-        zoom={17}
+        zoom={16}
         scrollWheelZoom={false}
         style={{ minHeight: "100vh", minWidth: "100vw", zIndex: 0 }}
       >
@@ -53,7 +43,13 @@ const VIsite = () => {
           >
             <Popup>
               <div>
-                <p>h-screen w-full overflow-hidden pt-3</p>
+                <p>{el.name}</p>
+                <p>{el.address}</p>
+                <NavLink className="flex justify-end" to={"/panorama"}>
+                  <div className="w-fit  rounded-lg px-4  py-1 text-right transition-colors duration-200 hover:bg-blue-50">
+                    Visite
+                  </div>
+                </NavLink>
               </div>
             </Popup>
           </Marker>
@@ -67,7 +63,7 @@ const VIsite = () => {
         </Marker> */}
         <ClickMarker setClickedPosition={setClickedPosition} />
 
-        {clickedPosition && (
+        {/* {clickedPosition && (
           <Marker
             position={clickedPosition}
             icon={L.icon({
@@ -75,7 +71,7 @@ const VIsite = () => {
               iconAnchor: [20, 40],
             })}
           ></Marker>
-        )}
+        )} */}
 
         {/* <LeafletRoutingMachine /> */}
       </MapContainer>

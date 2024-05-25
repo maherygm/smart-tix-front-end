@@ -58,5 +58,29 @@
     "latitude": -21.43772,
     "longitude": 47.09989,
     "address": "Place de Bateravola, Centre Ville, Fianarantsoa"
+  },
+  {
+    "name": "CHUD HIERE",
+    "latitude": -21.4540638,
+    "longitude": 47.0829771,
+    "address": "Place de Rue de Serbie, Centre Ville, Fianarantsoa"
+  },
+  {
+    "name": "ZOMATEL",
+    "latitude": -21.4545918,
+    "longitude": 47.0869568,
+    "address": "Place de Rue de Anjoma, Centre Ville, Fianarantsoa"
+  },
+  {
+    "name": "KIANJANY SERASERA",
+    "latitude": -21.46292,
+    "longitude": 47.1048,
+    "address": "Campus Université Andrainjato"
+  },
+  {
+    "name": "ZIG ZAG",
+    "latitude": -21.43782,
+    "longitude": 47.10253,
+    "address": "Rue de l'Indépendance, Centre Ville, Fianarantsoa"
   }
 ]

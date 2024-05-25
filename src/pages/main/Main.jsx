@@ -9,6 +9,7 @@ import Banner from "./content/banner/Banner";
 import Evenement from "./content/evenement/Evenement";
 import IncomingEvent from "./content/incomingevent/IncomingEvent";
 import LastEvent from "./content/lastevent/LastEvent";
+import Types from "./content/types/Types";
 const Main = () => {
   useEffect(() => {
     Aos.init();
@@ -21,6 +22,7 @@ const Main = () => {
       <Evenement />
       <IncomingEvent />
       <LastEvent />
+      <Types />
       <AboutUs />
       <Footer />
       <Fotter />

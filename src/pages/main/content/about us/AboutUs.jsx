@@ -2,7 +2,7 @@ import React from "react";
 
 const AboutUs = () => {
   return (
-    <div id="a_propos" className="flex flex-col gap-10 bg-white px-20">
+    <div id="a_propos" className="flex flex-col gap-10 bg-white px-20 py-10">
       <h1 className=" text-9xl">
         <p data-aos="fade-right" data-aos-anchor-placement="center-center">
           Get in touch with
