@@ -17,18 +17,51 @@ import CustomStepper from "./content/CustomStepper";
 
 import MyAllData from "../../../../utils/hotelsPosition.json";
 
+import { useDispatch } from "react-redux";
 import img from "../../../../assets/images/480x320/img28.jpg";
+import { addEvent } from "../../../../configs/stateManagers/redux/action/evenement.action";
 const AddEvenement = ({ open, handleClose }) => {
   const [activeStep, setActiveStep] = useState(0);
   const [image, setImage] = useState(null);
   const position = [-21.43772, 47.09989];
   const [clickedPosition, setClickedPosition] = useState(null);
   const [selectedLocation, setSelectedLocation] = useState({
+    lieu_id: 0,
     name: "Aucun",
     address: "Aucun",
     latitude: "",
     longitude: "",
   });
+
+  const [evenement, setEvenement] = useState({
+    titre_event: "Titre de l'événement",
+    description: "Description de l'événement",
+    date: "2024-05-18",
+    lieu_id: 0,
+    address: "",
+    lieu: "Lieu de l'événement",
+    longitude: 0,
+    latitude: 0,
+    prix: 3000,
+    image_path: "/chemin/vers/image.jpg",
+    price_id: "",
+    event_id_stripe: "",
+  });
+
+  const dispatch = useDispatch();
+
+  function handleSubmit(event) {
+    event.preventDefault();
+
+    const formData = new FormData();
+
+    formData.append("evenement", JSON.stringify(evenement));
+    formData.append("image", image);
+
+    console.log(evenement);
+
+    dispatch(addEvent(formData));
+  }
 
   //cleanUp state
   useEffect(() => {
@@ -71,10 +104,8 @@ const AddEvenement = ({ open, handleClose }) => {
       // Vérifier si le fichier est une image
       if (file.type.startsWith("image/")) {
         // Créer un objet URL pour afficher l'image
-        const imageUrl = URL.createObjectURL(file);
         setImage(file);
         // Afficher l'URL de l'image dans la console
-        console.log("URL de l'image:", imageUrl);
       } else {
         console.log("Le fichier déposé n'est pas une image.");
       }
@@ -125,10 +156,38 @@ const AddEvenement = ({ open, handleClose }) => {
                     </div>
                   </div>
                   <div className="flex w-1/2 flex-col gap-3 p-7">
-                    <TextField label="Titre evenement" fullWidth />
+                    <TextField
+                      value={evenement.titre_event}
+                      onChange={(e) => {
+                        setEvenement({
+                          ...evenement,
+                          titre_event: e.target.value,
+                        });
+                      }}
+                      label="Titre evenement"
+                      fullWidth
+                    />
                     <label>Date</label>
-                    <TextField type="datetime-local" />
-                    <TextField label="Description evenement" />
+                    <TextField
+                      onChange={(e) => {
+                        setEvenement({
+                          ...evenement,
+                          date: e.target.value,
+                        });
+                      }}
+                      value={evenement.date}
+                      type="datetime-local"
+                    />
+                    <TextField
+                      value={evenement.description}
+                      label="Description evenement"
+                      onChange={(e) => {
+                        setEvenement({
+                          ...evenement,
+                          description: e.target.value,
+                        });
+                      }}
+                    />
                   </div>
                 </div>
               </div>
@@ -168,6 +227,13 @@ const AddEvenement = ({ open, handleClose }) => {
                                   setSelectedLocation({
                                     name: el.name,
                                     address: el.address,
+                                    longitude: el.longitude + "",
+                                    latitude: el.latitude + "",
+                                  });
+                                  setEvenement({
+                                    ...evenement,
+                                    lieu: el.name,
+                                    address: el.address,
                                     longitude: el.longitude,
                                     latitude: el.latitude,
                                   });
@@ -191,12 +257,48 @@ const AddEvenement = ({ open, handleClose }) => {
                   <p className="text-zinc-600">{selectedLocation.address}</p>
                 </div>
               </div>
-              <div className="h-full w-[1270px]  bg-green-400"></div>
+              <div className="flex h-full w-[1270px] flex-col items-center justify-center gap-3">
+                <h1 className="text-3xl">Ajouter un Prix</h1>
+                <div className="flex gap-3 rounded-md bg-zinc-100 p-6">
+                  <div className="h-auto">
+                    <img
+                      className=" w-44 overflow-hidden"
+                      src={image ? URL.createObjectURL(image) : ""}
+                      alt=""
+                    />
+                  </div>
+                  <div>
+                    <h1>Titre </h1>
+                    <p>Description </p>
+                    <p>Date et heure </p>
+                    <p>Lieux</p>
+                    <p>Description Lieux</p>
+                  </div>
+                  <TextField
+                    label="prix"
+                    type="number"
+                    value={parseInt(evenement.prix)}
+                    minRows={3000}
+                    onChange={(e) => {
+                      setEvenement({
+                        ...evenement,
+                        prix: parseInt(e.target.value),
+                      });
+                    }}
+                  />
+                </div>
+              </div>
             </div>
           </div>
           <div className="flex items-end justify-end gap-5 py-2">
             <Button onClick={() => handleClickBack(activeStep)}>back</Button>
-            <Button onClick={() => handleClickNext(activeStep)}>next</Button>
+            {activeStep === 2 ? (
+              <>
+                <Button onClick={(e) => handleSubmit(e)}>Confirmer</Button>
+              </>
+            ) : (
+              <Button onClick={() => handleClickNext(activeStep)}>next</Button>
+            )}
           </div>
         </div>
       </ModalMui>
