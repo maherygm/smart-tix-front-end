@@ -3,79 +3,92 @@
     "name": "Salle des Fêtes Fianarantsoa",
     "latitude": -21.4525,
     "longitude": 47.085,
-    "address": "Rue de l'Indépendance, Centre Ville, Fianarantsoa"
+    "address": "Rue de l'Indépendance, Centre Ville, Fianarantsoa",
+    "id": 1
   },
   {
     "name": "Palais des Sports",
     "latitude": -21.454,
     "longitude": 47.0875,
-    "address": "Avenue de la Liberté, Centre Ville, Fianarantsoa"
+    "address": "Avenue de la Liberté, Centre Ville, Fianarantsoa",
+    "id": 2
   },
   {
     "name": "Centre Culturel Albert Camus",
     "latitude": -21.45,
     "longitude": 47.0825,
-    "address": "Boulevard de l'Université, Centre Ville, Fianarantsoa"
+    "address": "Boulevard de l'Université, Centre Ville, Fianarantsoa",
+    "id": 3
   },
   {
     "name": "Hôtel Restaurant La Rizière",
     "latitude": -21.4535,
     "longitude": 47.0845,
-    "address": "Route de la Colline, Centre Ville, Fianarantsoa"
+    "address": "Route de la Colline, Centre Ville, Fianarantsoa",
+    "id": 4
   },
   {
     "name": "Parc de la Ville",
     "latitude": -21.4555,
     "longitude": 47.089,
-    "address": "Place de l'Harmonie, Centre Ville, Fianarantsoa"
+    "address": "Place de l'Harmonie, Centre Ville, Fianarantsoa",
+    "id": 5
   },
   {
     "name": "Théâtre de Verdure",
     "latitude": -21.4515,
     "longitude": 47.081,
-    "address": "Allée des Artistes, Centre Ville, Fianarantsoa"
+    "address": "Allée des Artistes, Centre Ville, Fianarantsoa",
+    "id": 6
   },
   {
     "name": "Stade ampasambazaha",
     "latitude": -21.44902,
     "longitude": 47.08804,
-    "address": "Place de Ampasambazaha, Centre Ville, Fianarantsoa"
+    "address": "Place de Ampasambazaha, Centre Ville, Fianarantsoa",
+    "id": 7
   },
   {
     "name": "Hotel Pietra",
     "latitude": -21.4403821,
     "longitude": 47.0977219,
-    "address": "Place de Ambalakosoa, Centre Ville, Fianarantsoa"
+    "address": "Place de Ambalakosoa, Centre Ville, Fianarantsoa",
+    "id": 8
   },
   {
     "name": "KMM Talatamaty",
     "latitude": -21.43691,
     "longitude": 47.10459,
-    "address": "Place de talatamaty, Centre Ville, Fianarantsoa"
+    "address": "Place de talatamaty, Centre Ville, Fianarantsoa",
+    "id": 9
   },
   {
     "name": "ROYAL ESPACE",
     "latitude": -21.43772,
     "longitude": 47.09989,
-    "address": "Place de Bateravola, Centre Ville, Fianarantsoa"
+    "address": "Place de Bateravola, Centre Ville, Fianarantsoa",
+    "id": 10
   },
   {
     "name": "CHUD HIERE",
     "latitude": -21.4540638,
     "longitude": 47.0829771,
-    "address": "Place de Rue de Serbie, Centre Ville, Fianarantsoa"
+    "address": "Place de Rue de Serbie, Centre Ville, Fianarantsoa",
+    "id": 11
   },
   {
     "name": "ZOMATEL",
     "latitude": -21.4545918,
     "longitude": 47.0869568,
-    "address": "Place de Rue de Anjoma, Centre Ville, Fianarantsoa"
+    "address": "Place de Rue de Anjoma, Centre Ville, Fianarantsoa",
+    "id": 12
   },
   {
     "name": "KIANJANY SERASERA",
     "latitude": -21.46292,
     "longitude": 47.1048,
-    "address": "Campus Université Andrainjato"
+    "address": "Campus Université Andrainjato",
+    "id": 13
   },
   {
     "name": "ZIG ZAG",
