@@ -30,6 +30,8 @@ const Explore = () => {
       <Details data={dataDetails} />
       <AllEvent data={allData} selectLocation={selectLocation} />
     </div>
+
+    
   )
 };
 export default Explore;
