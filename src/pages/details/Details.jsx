@@ -1,27 +1,67 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { AiOutlineLoading3Quarters } from "react-icons/ai";
+import { useSelector } from "react-redux";
+import { useNavigate, useParams } from "react-router-dom";
 import img from "../../assets/images/imageBanner/img-4-2.jpg";
-import imgaffice from "../../assets/images/op/img_11.jpg";
+import { formatDate } from "../../hooks/formatDate";
+import { atempsToPayement } from "../../services/ticketServices";
 const Details = () => {
- 
-    
   const [value, setValue] = useState(1);
-  const [prixTotal, setPrixTotal] = useState(5000);
+  const [prixTotal, setPrixTotal] = useState(0);
+  const [isLoading, setLoading] = useState(false);
+
+  const { id } = useParams();
+
+  const allEvent = useSelector((selector) => selector.eventReducers);
+
+  const [event, setEvent] = useState([]);
+
+  const navigate = useNavigate();
+
+  function navigateTo(path) {
+    navigate(path);
+  }
+
+  function handleSubmit() {
+    setLoading(true);
+    const urlStripe = atempsToPayement({
+      priceId: event[0].price_id,
+      quatity: value,
+    });
+
+    urlStripe
+      .then((res) => {
+        window.location.href = res;
+      })
+      .catch((e) => console.log(e));
+  }
+
+  useEffect(() => {
+    const eventCopy = allEvent.filter((value) => value.id == id);
+
+    setEvent(eventCopy);
+    setPrixTotal(eventCopy[0].prix);
+  }, [id]);
+
+  if (event.length <= 0) {
+    return null;
+  }
+
   return (
     <div className="relative  h-screen w-full">
       <div className="relative">
         <div className="relative h-96 overflow-hidden">
           <img className="" src={img} />
           <div className="absolute left-0 top-0 flex size-full flex-col items-end gap-5 bg-black/20  px-10 pt-5  text-white">
-            <p className="text-7xl text-red-500">AMBONDRONA</p>
-            <p className="text-5xl">CONCERT</p>
-            <p className="text-3xl">ROYAL ESPACE BATERAVOLA</p>
-            <p className="text-3xl">13 AOUT 2023 a 15h</p>
-            <p className="text-3xl">Paf : 5000 ariary</p>
+            <p className="text-7xl text-red-500">{event[0].titre_event}</p>
+            <p className="text-5xl">{event[0].description}</p>
+            <p className="text-3xl">{event[0].lieu}</p>
+            <p className="text-3xl">{formatDate(event[0].date)}</p>
+            <p className="text-3xl">Paf :{event[0].prix} Ar</p>
           </div>
         </div>
         <div className="absolute left-20 top-20 w-96">
-          <img className="w-full" src={imgaffice} />
+          <img className="w-full" src={event[0].image_path} />
         </div>
       </div>
       <div className="flex  flex-col items-end gap-6 p-9 px-36">
@@ -38,7 +78,7 @@ const Details = () => {
                     value !== 0
                       ? () => {
                           setValue((val) => val - 1);
-                          setPrixTotal(5000 * (value - 1));
+                          setPrixTotal(event[0].prix * (value - 1));
                         }
                       : null
                   }
@@ -55,7 +95,7 @@ const Details = () => {
                 <div
                   onClick={() => {
                     setValue(value + 1);
-                    setPrixTotal(5000 * (value + 1));
+                    setPrixTotal(event[0].prix * (value + 1));
                   }}
                   className="cursor-pointer rounded-lg bg-blue-50 px-2 py-1 text-2xl transition-colors duration-200 hover:bg-blue-100"
                 >
@@ -67,13 +107,25 @@ const Details = () => {
           </div>
           <div className="flex items-end justify-end  gap-4">
             <div
-              onClick={() => goBack()}
-              className="cursor-pointer rounded-lg bg-blue-50 px-2 py-1 text-2xl transition-colors duration-200 hover:bg-blue-100"
+              onClick={() => navigateTo(-1)}
+              className=" cursor-pointer rounded-lg bg-blue-50 p-4 transition-colors duration-200 hover:bg-blue-100"
             >
               Retour
             </div>
-            <div className="cursor-pointer rounded-lg bg-blue-500 px-2 py-1 text-2xl text-white transition-colors duration-200 hover:bg-blue-600">
-              Acheter
+            <div
+              onClick={() => handleSubmit()}
+              className=" cursor-pointer rounded-lg bg-blue-500 p-4 text-white transition-colors duration-200 hover:bg-blue-600"
+            >
+              {isLoading ? (
+                <>
+                  <div className="flex gap-2">
+                    <AiOutlineLoading3Quarters className="animate-spin text-2xl" />
+                    Loading...
+                  </div>
+                </>
+              ) : (
+                " Acheter"
+              )}
             </div>
           </div>
         </div>

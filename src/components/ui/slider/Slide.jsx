@@ -13,6 +13,11 @@ const Slide = ({ data }) => {
     autoplaySpeed: 6000,
     cssEase: "linear",
   };
+
+  if (!data) {
+    return <p>Erreur , il n'y a pas de donnée</p>
+  }
+
   return (
     <div className="slider-container">
       <Slider {...settings}>
@@ -21,7 +26,10 @@ const Slide = ({ data }) => {
             className="mx-4 max-h-[90vh] overflow-hidden rounded-lg p-2  outline-none"
             key={index}
           >
-            <img className="w-full cursor-pointer rounded-lg" src={val.img} />
+            <img
+              className="w-full cursor-pointer rounded-lg"
+              src={val.image_path}
+            />
           </div>
         ))}
       </Slider>

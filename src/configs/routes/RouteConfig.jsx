@@ -32,33 +32,34 @@ const __PANORAMA__ = lazy(
 );
 
 const __DETAILS__ = lazy(() => import("../../pages/details/Details.jsx"));
+
 const RouteConfig = () => {
   return (
     <Suspense fallback={<Loader />}>
       <Routes>
-        {/* authentification Route  */}
+        {/* ! authentification Route  */}
         <Route path="/auth" element={<__AUTH__ />}>
           <Route path="login" element={<__AUTH__LOGIN__ />} />
           <Route path="signUp" element={<__AUTH__SIGNUP__ />} />
           <Route />
         </Route>
 
-        {/* main  Route  */}
+        {/* ! main Route  */}
         <Route path="/" element={<__MAIN__ />} />
 
-        {/* dashboard Route  */}
+        {/*  dashboard Route  */}
         <Route path="/dashboard" element={<__DASHBOARD__ />} />
 
-        {/* explore */}
+        {/* ! explore */}
         <Route path="/explore" element={<__EXPLORE__ />} />
 
-        {/* pannorama */}
+        {/* ! pannorama */}
         <Route path="/panorama" element={<__PANORAMA__ />} />
 
-        {/* details */}
-        <Route path="/details" element={<__DETAILS__ />} />
+        {/* ! details */}
+        <Route path="/details/:id" element={<__DETAILS__ />} />
 
-        {/* redirect route */}
+        {/* ! redirect route */}
         <Route path="/redirect" element={<__REDIRECT__ />}>
           <Route path="notfound" element={<__REDIRECT__NOTFOUND__ />} />
           <Route path="unauthorized" element={<__REDIRECT__UNAUTHORIZED__ />} />

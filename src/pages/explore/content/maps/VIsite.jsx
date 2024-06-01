@@ -8,27 +8,47 @@ import {
   TileLayer,
   useMapEvents,
 } from "react-leaflet";
+
+import icons from "../../../../assets/images/icons/svg/location.svg";
 // import LeafletRoutingMachine from "./LeafletRoutingMachine";
 
 import { useState } from "react";
 
+import { useEffect, useRef } from "react";
 import { NavLink } from "react-router-dom";
 import img from "../../../../assets/images/480x320/img30.jpg";
 import MyAllData from "../../../../utils/hotelsPosition.json";
 
-const VIsite = () => {
+const VIsite = ({ defaultLocation, location, data }) => {
+
+
+  const mapRef = useRef();
+
+  useEffect(() => {
+    if (mapRef.current) {
+      mapRef.current.setView(defaultLocation, 18);
+    }
+  }, [defaultLocation]);
   // //royal espace
   const position = [-21.43772, 47.09989];
 
   const [clickedPosition, setClickedPosition] = useState(null);
 
+  function checkLocation(data) {
+    if (data.latitude === defaultLocation[0] && data.longitude === defaultLocation[1]) {
+      return true
+    }
+    return false
+  }
+
   // const data = JSON.parse(MyAllData);
   return (
     <div className="z-0 h-screen w-full overflow-hidden pt-36">
       <MapContainer
-        center={position}
+        center={defaultLocation}
         zoom={16}
         scrollWheelZoom={false}
+        ref={mapRef}
         style={{ minHeight: "100vh", minWidth: "100vw", zIndex: 0 }}
       >
         <TileLayer
@@ -37,11 +57,11 @@ const VIsite = () => {
         />
         {MyAllData.map((el, index) => (
           <Marker
-            icon={createCustomIcon(img)}
+            icon={createCustomIcon(img, el.name, checkLocation(el))}
             key={index}
             position={[el.latitude, el.longitude]}
           >
-            <Popup>
+            <Popup >
               <div>
                 <p>{el.name}</p>
                 <p>{el.address}</p>
@@ -75,7 +95,10 @@ const VIsite = () => {
 
         {/* <LeafletRoutingMachine /> */}
       </MapContainer>
+
     </div>
+
+
   );
 };
 
@@ -99,11 +122,24 @@ const ClickMarker = ({ setClickedPosition }) => {
 // });
 // L.Marker.prototype.options.icon = DefaultIcon;
 
-const createCustomIcon = (iconUrl) => {
+const createCustomIcon = (iconUrl, nameLocation, isActive) => {
   return L.divIcon({
     html: `
-      <div class="relative w-10 h-10 bg-white rounded-full border-2 border-black flex items-center justify-center overflow-hidden">
-        <img src="${iconUrl}" style="width: 100%; height: 100%;" alt="icon"/>
+    
+      <div class="flex  items-center">
+        ${isActive ? (`
+        <div>
+          <img class="animate-bounce" src="${icons}"/>
+          <div class="bg-white p-2 rounded-full">
+            <p>ICI</p>
+          </div>
+        </div> `) : ""}
+        <div class="w-20 flex bg-slate-100/25">
+          <div class="relative w-10 h-10 bg-white rounded-md border-2 border-black flex items-center justify-center overflow-hidden">
+            <img src="${iconUrl}" class="w-full h-full" style="width: 100%; height: 100%;" alt="icon"/>
+          </div>
+          <p>${nameLocation}</p>
+        </div>
       </div>
     `,
     className: "", // Pour éviter les styles par défaut de Leaflet

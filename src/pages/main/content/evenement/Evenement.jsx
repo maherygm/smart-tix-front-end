@@ -1,9 +1,11 @@
 import Slide from "../../../../components/ui/slider/Slide";
-import { image } from "../../../../utils/imageImport/ImageImport";
-const Evenement = () => {
+const Evenement = ({ data }) => {
+  if (!data) {
+    return <p>no data !!</p>
+  }
   return (
-    <div className=" overflow-hidden bg-white pb-11  pt-2">
-      <Slide data={image} />
+    <div className="overflow-hidden bg-white pb-11 pt-2 ">
+      <Slide data={data} />
     </div>
   );
 };

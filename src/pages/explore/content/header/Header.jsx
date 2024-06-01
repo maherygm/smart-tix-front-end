@@ -4,7 +4,7 @@ import { BiSearch } from "react-icons/bi";
 import { CiTurnR1 } from "react-icons/ci";
 import { useNavigate } from "react-router-dom";
 
-const Header = () => {
+const Header = ({ data, searchFuction }) => {
   const navigate = useNavigate();
 
   const goBack = () => {
