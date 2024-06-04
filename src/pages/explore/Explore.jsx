@@ -5,12 +5,13 @@ import Details from "./content/details/Details";
 import Header from "./content/header/Header";
 import VIsite from "./content/maps/VIsite";
 const Explore = () => {
+  
   const allData = useSelector((state) => state.eventReducers);
+
   const [dataDetails, setDataDetails] = useState(allData[0]);
   const [search, setSearch] = useState("");
 
   const [defaultLocation, setDefaultLocation] = useState([-21.43772, 47.09989]);
-
 
   function searchFuction() {
 
@@ -20,6 +21,7 @@ const Explore = () => {
     setDefaultLocation([data.latitude, data.longitude]);
     setDataDetails(data);
   }
+  
 
   return (
     <div className="h-screen">
@@ -29,9 +31,9 @@ const Explore = () => {
       <Header searchFuction={searchFuction} data={allData} />
       <Details data={dataDetails} />
       <AllEvent data={allData} selectLocation={selectLocation} />
+
     </div>
 
-    
   )
 };
 export default Explore;

@@ -11,8 +11,9 @@ function VrScholl() {
   function goback(parameters) {
     navigate(-1);
   }
+
   return (
-    <div className="h-screen w-full">
+    <div className="w-full h-screen">
       <a-scene>
         <img id="panorama" src={img} />
         <a-sky src="#panorama" rotation="0 -90 0"></a-sky>
@@ -21,7 +22,7 @@ function VrScholl() {
 
       <Link
         onClick={() => goback()}
-        className=" absolute left-6 top-2 w-24 rounded-lg bg-blue-600 px-5 py-3 text-center  text-white transition-colors duration-200 hover:bg-blue-700 "
+        className="absolute w-24 px-5 py-3 text-center text-white transition-colors duration-200 bg-blue-600 rounded-lg left-6 top-2 hover:bg-blue-700 "
       >
         Retour
       </Link>
